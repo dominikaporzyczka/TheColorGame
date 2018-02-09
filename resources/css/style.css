@@ -1,0 +1,56 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background: #bdc3c7;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 550px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+h1,
+h2 {
+    margin: 0;
+    font-weight: 400;
+}
+
+.header {
+    padding: 10px 0;
+    background: #18ad90;
+    color: #fff;
+    text-align: center;
+}
+
+#randomColor {
+    font-size: 3em;
+}
+
+nav {
+    background: #fff;
+}
+
+nav a {
+    text-decoration: none;
+    color: #18ad90;
+    margin: 0 10px;
+}
+
+.content {
+    text-align: center;
+    margin: 15px auto;
+}
+
+.square {
+    display: inline-block;
+    margin: 10px;
+    height: 150px;
+    width: 150px;
+    background: #e74c3c;
+    border-radius: 20px;
+    cursor: pointer;
+}
