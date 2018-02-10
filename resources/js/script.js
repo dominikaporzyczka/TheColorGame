@@ -22,6 +22,7 @@ function setUpGame() {
     selectWinningSquare();
     game();
 
+    message.textContent = "";
     newColors.textContent = "NEW COLORS";
     header.style.backgroundColor = "#18ad90";
 }
