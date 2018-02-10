@@ -46,6 +46,16 @@ nav a {
     display: inline-block;
     width: 30%;
 }
+#easy,
+#hard {
+    padding: 0 5px;
+}
+
+#easy:hover,
+#hard:hover {
+    background: #18ad90;
+    color: #fff;
+}
 
 /**** FIELD WITH SQUARES ****/
 #content {

@@ -24,6 +24,7 @@ function setUpGame() {
     game();
 
     newColors.textContent = "NEW COLORS";
+    header.style.backgroundColor = "#18ad90";
 }
 
 newColors.addEventListener("click", function() {
