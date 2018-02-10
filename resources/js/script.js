@@ -1,5 +1,4 @@
 var squares;
-var rgbColor = document.querySelectorAll(".rgbColor");
 var content = document.querySelector("#content");
 var header = document.querySelector("#header");
 var headerColorValue = document.querySelector("#colorValue");
@@ -7,7 +6,7 @@ var squareColors = [];
 var easyGame = document.querySelector("#easy");
 var hardGame = document.querySelector("#hard");
 var newColors = document.querySelector("#newColors");
-var tryAgain = document.querySelector("#tryAgain");
+var message = document.querySelector("#message");
 var numberOfSquare = 6;
 var winningSquare;
 var bgColor = "#000";
@@ -31,11 +30,6 @@ newColors.addEventListener("click", function() {
     setUpGame();
 })
 
-/*ustawia randomowo nagłówek*/
-for (var i = 0; i < rgbColor.length; i++) {
-    rgbColor[i].textContent = randColor();
-}
-
 /* ustawianie randomowych kolorów do obiektu */
 function randColor() {
    return Math.floor(Math.random() * 216) + 20;
@@ -58,11 +52,15 @@ function fillArrayWithColors() {
 easyGame.addEventListener("click", function() {
     numberOfSquare = 3;
     setUpGame();
+    hardGame.classList.remove("selected");
+    easyGame.classList.add("selected");
 });
 
 hardGame.addEventListener("click", function() {
     numberOfSquare = 6;
     setUpGame();
+    hardGame.classList.add("selected");
+    easyGame.classList.remove("selected");
 });
 
 /*generowanie square'ów w zależnosci od ustawionej ilości*/
@@ -106,7 +104,7 @@ function setUpClick(element, index) {
 
         if (index !== winningSquare) {
             this.style.backgroundColor = bgColor;
-            tryAgain.textContent = "TRY AGAIN!";
+            message.textContent = "Try again";
 
         }
         else {
@@ -123,6 +121,5 @@ function winGame() {
     }
     header.style.backgroundColor = winner;
     newColors.textContent = "PLAY AGAIN?";
-    tryAgain.textContent = "CORRECT!";
-    
+    message.textContent = "Correct!";  
 }

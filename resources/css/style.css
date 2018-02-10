@@ -4,11 +4,11 @@ html {
     padding: 0;
     background: #000;
     font-family: 'Lato', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .container {
-    max-width: 550px;
+    max-width: 600px;
     text-align: center;
     margin: 0 auto;
 }
@@ -33,28 +33,35 @@ h2 {
 }
 
 /**** NAVIGATION ****/
-nav {
+.stripe {
     background: #fff;
+    height: 30px;
+    text-align: center;
 }
 
-nav a {
-    text-decoration: none;
+button {
     color: #18ad90;
-}
-
-.col {
-    display: inline-block;
-    width: 30%;
-}
-#easy,
-#hard {
-    padding: 0 5px;
+    height: 100%;
+    border: none;
+    background: none;
+    letter-spacing: 1px;
+    font-size: inherit;
+    outline: none;
+    font-weight: 700;
+    transition: all 0.3s;
 }
 
 #easy:hover,
-#hard:hover {
+#hard:hover,
+#newColors:hover,
+.selected {
     background: #18ad90;
     color: #fff;
+}
+
+#message {
+    display: inline-block;
+    width: 20%;
 }
 
 /**** FIELD WITH SQUARES ****/
@@ -65,11 +72,11 @@ nav a {
 
 .square {
     display: inline-block;
-    margin: 10px;
-    height: 150px;
-    width: 150px;
+    margin: 1.66%;
+    width: 30%;
+    padding-bottom: 30%;
     background: #e74c3c;
-    border-radius: 20px;
+    border-radius: 15%;
     cursor: pointer;
     transition: background-color 0.5s;
 }
