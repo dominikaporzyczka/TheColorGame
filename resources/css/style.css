@@ -13,6 +13,7 @@ html {
     margin: 0 auto;
 }
 
+/**** HEADER ****/
 h1,
 h2 {
     margin: 0;
@@ -30,6 +31,7 @@ h2 {
     font-size: 3em;
 }
 
+/**** NAVIGATION ****/
 nav {
     background: #fff;
 }
@@ -40,6 +42,7 @@ nav a {
     margin: 0 10px;
 }
 
+/**** FIELD WITH SQUARES ****/
 .content {
     text-align: center;
     margin: 15px auto;
@@ -53,4 +56,9 @@ nav a {
     background: #e74c3c;
     border-radius: 20px;
     cursor: pointer;
+}
+
+.selected {
+    background: #bdc3c7;
+    transition: background-color 0.7s;
 }
