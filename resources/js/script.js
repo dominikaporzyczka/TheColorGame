@@ -1,4 +1,4 @@
-var square = document.querySelectorAll(".square");
+var squares;
 var rgbColor = document.querySelectorAll(".rgbColor");
 var content = document.querySelector("#content");
 var squareColors = [];
@@ -10,34 +10,33 @@ var numberOfSquare = 6;
 setUpGame();
 
 function setUpGame() {
-    fillArrayWithColors();
     addSquares(numberOfSquare);
+    fillArrayWithColors();
+    setBackground();
 }
+
+newColors.addEventListener("click", function() {
+    setUpGame();
+})
 
 /*ustawia randomowo nagłówek*/
 for (var i = 0; i < rgbColor.length; i++) {
-    rgbColor[i].textContent = random();
-}
-
-/* po kliknięciu zmienia background na background body*/
-for(var i = 0; i < square.length; i++) {
-    square[i].addEventListener("click", function() {
-        this.classList.add("selected");
-    });
+    rgbColor[i].textContent = randColor();
 }
 
 /* ustawianie randomowych kolorów do obiektu */
-function random() {
+function randColor() {
    return Math.floor(Math.random() * 256);
 }
 
 function fillArrayWithColors() {
-    for (var i = 0; i < square.length; i++) {
+    squareColors = [];
+    for (var i = 0; i < numberOfSquare; i++) {
         squareColors.push(
             { 
-                r: random(), 
-                g: random(),
-                b: random() 
+                r: randColor(), 
+                g: randColor(),
+                b: randColor() 
             }
         );
     }
@@ -47,12 +46,12 @@ function fillArrayWithColors() {
 easyGame.addEventListener("click", function() {
     numberOfSquare = 3;
     setUpGame();
-})
+});
 
 hardGame.addEventListener("click", function() {
     numberOfSquare = 6;
     setUpGame();
-})
+});
 
 /*generowanie square'ów w zależnosci od ustawionej ilości*/
 function addSquares(n) {
@@ -62,6 +61,7 @@ function addSquares(n) {
         square.classList.add("square");
         content.appendChild(square);
     }
+    squares = document.querySelectorAll(".square");
 }
 
 /*pobiera dane z obiektu zawierającego randomowe r, g i b i zamienia na string*/
@@ -69,4 +69,9 @@ function createRGB(color) {
     return "rgb(" + color.r + ", " + color.g + ", " + color.b + ")";
 }
 
-function 
+/* ustawianie background dla każdego square */
+function setBackground() {
+    for(var i = 0; i < numberOfSquare; i++) {
+        squares[i].style.backgroundColor = createRGB(squareColors[i]);
+    }
+}
