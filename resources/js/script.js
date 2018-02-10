@@ -30,7 +30,7 @@ newColors.addEventListener("click", function() {
     setUpGame();
 })
 
-/* ustawianie randomowych kolorów do obiektu */
+/* setting random colors to the object */
 function randColor() {
    return Math.floor(Math.random() * 216) + 20;
 }
@@ -48,7 +48,7 @@ function fillArrayWithColors() {
     }
 }
 
-/*ustawianie ilości square'ów w zależności do poziomu trudności gry*/
+/*setting the number of squares depending on the difficulty level of the game*/
 easyGame.addEventListener("click", function() {
     numberOfSquare = 3;
     setUpGame();
@@ -63,7 +63,7 @@ hardGame.addEventListener("click", function() {
     easyGame.classList.remove("selected");
 });
 
-/*generowanie square'ów w zależnosci od ustawionej ilości*/
+/*appending squares depending on the set amount*/
 function addSquares(n) {
     content.innerHTML = "";
     for (var i = 0; i < n; i++) {
@@ -74,24 +74,25 @@ function addSquares(n) {
     squares = document.querySelectorAll(".square");
 }
 
-/*pobiera dane z obiektu zawierającego randomowe r, g i b i zamienia na string*/
+/*getting data from an object containing random r, g and b and converts to a string*/
 function createRGB(color) {
     return "rgb(" + color.r + ", " + color.g + ", " + color.b + ")";
 }
 
-/* ustawianie background dla każdego square */
+/* setting background for each square */
 function setBackground() {
     for(var i = 0; i < numberOfSquare; i++) {
         squares[i].style.backgroundColor = createRGB(squareColors[i]);
     }
 }
 
-/* losowanie wygrywającego square'a*/
+/* randomization of the winning square*/
 function selectWinningSquare() {
     winningSquare = Math.floor(Math.random() * numberOfSquare);
     headerColorValue.textContent = createRGB(squareColors[winningSquare]);
 }
 
+/* game progress settings */
 function game() {
     for(var i = 0; i < numberOfSquare; i++) {
         setUpClick(squares[i], i);
@@ -105,7 +106,6 @@ function setUpClick(element, index) {
         if (index !== winningSquare) {
             this.style.backgroundColor = bgColor;
             message.textContent = "Try again";
-
         }
         else {
             gameOver = true;
