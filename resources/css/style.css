@@ -43,7 +43,7 @@ nav a {
 }
 
 /**** FIELD WITH SQUARES ****/
-.content {
+#content {
     text-align: center;
     margin: 15px auto;
 }
