@@ -9,18 +9,26 @@
     <link rel="stylesheet" href="resources/css/style.css" type="text/css">
 </head>
 <body>
-    <div class="header">
+    <div id="header">
         <h2>THE GREAT</h2>
-        <h1 id="randomColor">RGB(<span class="rgbColor">255</span>, <span class="rgbColor">255</span>, <span class="rgbColor">255</span>)</h1>
+        <h1 id="colorValue">RGB(<span class="rgbColor">255</span>, <span class="rgbColor">255</span>, <span class="rgbColor">255</span>)</h1>
         <h2>GUESSING GAME</h2>
     </div>
 
     <nav>
         <div class="container">
-            <a href="#" id="newColors">NEW COLORS</a>
-            <span>Try Again</span>
-            <a href="#" id="easy">EASY</a>
-            <a href="#" id="hard">HARD</a>
+            <div class="col">
+                <a href="#" id="newColors">NEW COLORS</a>
+            </div>
+
+            <div class="col">
+                <span id="tryAgain"></span>
+            </div>
+            
+            <div class="col">
+                <a href="#" id="easy">EASY</a>
+                <a href="#" id="hard">HARD</a>
+            </div>
         </div>
     </nav>
 

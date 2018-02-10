@@ -20,15 +20,16 @@ h2 {
     font-weight: 400;
 }
 
-.header {
+#header {
     padding: 10px 0;
     background: #18ad90;
     color: #fff;
     text-align: center;
 }
 
-#randomColor {
+#colorValue {
     font-size: 3em;
+    text-transform: uppercase;
 }
 
 /**** NAVIGATION ****/
@@ -39,7 +40,11 @@ nav {
 nav a {
     text-decoration: none;
     color: #18ad90;
-    margin: 0 10px;
+}
+
+.col {
+    display: inline-block;
+    width: 30%;
 }
 
 /**** FIELD WITH SQUARES ****/
@@ -56,9 +61,5 @@ nav a {
     background: #e74c3c;
     border-radius: 20px;
     cursor: pointer;
-}
-
-.selected {
-    background: #bdc3c7;
-    transition: background-color 0.7s;
+    transition: background-color 0.5s;
 }
