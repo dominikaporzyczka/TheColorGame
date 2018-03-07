@@ -12,8 +12,8 @@ The project has been created during the Udacity course -> The Web Developer Boot
 ## Demo
 https://dominikaporzyczka.github.io/TheColorGame/
 
-## Technogies
+## Technologies
 
-* HTML5
+* HTML
 * CSS3
 * JavaScript
